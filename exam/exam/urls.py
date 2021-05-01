@@ -25,5 +25,6 @@ HOMEPAGE_URL = 'webapp/'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('webapp/', include('webapp.urls')),
+    path('accounts/', include('accounts.urls'))
 
 ]+ static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

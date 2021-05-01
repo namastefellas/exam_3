@@ -16,8 +16,12 @@
             <h5 class="card-title">Название: {{ product.name }}</h5>
             <h6 class="card-subtitle mb-2">Категория: {{ product.get_category_display  }}</h6>
             <a href="{% url 'webapp:product_view' product.pk %}">Посмотреть товар</a>
+            {% if perms.webapp.delete_product %}
             <a href="{% url 'webapp:product_delete' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/trash.png"/></a>
+            {% endif %}
+            {% if perms.webapp.change_product %}
             <a href="{% url 'webapp:product_edit' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/edit.png"/></a>
+            {% endif %}
             </div>    
         </div>
         {% endfor %}

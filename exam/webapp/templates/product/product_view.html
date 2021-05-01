@@ -13,16 +13,24 @@
             {% else %}
             <img class="pic" src="{{ product.pic.url }}" width="250" height="250" alt="product picture">
             {% endif %}
+            {% if perms.webapp.change_product %}
             <p><a href="{% url 'webapp:product_edit' product.pk %}">Редактировать товар</a></p>
+            {% endif %}
+            {% if perms.webapp.delete_product %}
             <p><a href="{% url 'webapp:product_delete' product.pk %}">Удалить товар</a></p>
+            {% endif %}
         </div> 
         </div>
         {% for review in product.products.all %}
-                <h4>Автор: {{ review.author }}</h4>
+                <p><a href="{% url 'accounts:user_profile' user.pk %}">{{ review.author }}</a></p>
                 <p>Отзыв: {{ review.description }}</p>
                 <p>Оценка пользователя: {{ review.score }}</p> 
+                {% if perms.webapp.change_review  %}
                 <p><a href="{% url 'webapp:review_edit' review.pk %}">Редактировать отзыв</a></p>
+                {% endif %}
+                {% if perms.webapp.delete_review and request.user in product.user.all %}
                 <p><a href="{% url 'webapp:review_delete' review.pk %}">Удалить отзыв</a></p>
+                {% endif %}  
         {% endfor %}
         <p><a href="{% url 'webapp:review_create' product.pk %}">Добавить отзыв</a></p>
 </div>

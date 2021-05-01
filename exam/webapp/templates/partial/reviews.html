@@ -1,0 +1,10 @@
+{% if not product.products.all %}
+<h2 class="text-center">Пользователь не оставил ни одного отзыва</h2>
+{% endif %}
+{% for review in product.products.all %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h3 class="card-title">{{ review.name }}</h3>
+    </div>
+</div>
+{% endfor %}

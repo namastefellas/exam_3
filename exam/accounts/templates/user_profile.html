@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}User Profile{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+    {% if user.profile.avatar %}
+        <img class="avatar" src="{{ user.profile.avatar.url }}" width="250" height="250" alt="user picture">
+    {% else %}
+        <img class="pic" src="https://kyivdomik.com/imgs/not-available.png" width="250" height="250" alt="product picture"> 
+    {% endif %}
+    {% if user.profile.description %}
+    <p>О себе: {{ user.profile.description }}</p>
+    {% endif %}
+    <p>Никнейм: {{ user.username }}</p>
+    <p>Имя: {{ user.first_name }}</p>
+    <p>Фамилия: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+
+    <h2 class="text-center clear">Отзывы пользователя:</h2>
+    {% include 'partial/reviews.html' %}
+{% endblock %}
