@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<h3>Вы точно хотите удалить этот продукт?</h3>
+<form method="POST" action="{% url 'webapp:product_delete' product.pk %}">
+    {% csrf_token %}
+        <p><input type="submit" value="Подтвердить"></p>
+        <p><a href="{% url 'webapp:product_list' %}" type="button">Отменить</a></p>
+</form>
+{% endblock %}

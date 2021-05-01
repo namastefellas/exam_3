@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock menu %}
+{% block title %}Product Edit{% endblock %}
+{% block content %}
+<form method="POST" action="{% url 'webapp:product_edit' product.pk %}">
+    {% include "partial/form.html" with button_text="Обновить" %}
+</form>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'webapp:product_create' %}" method="post">
+{% csrf_token %}
+{% include "partial/form.html" with button_text="Добавить" %}
+</form>
+{% endblock %}
