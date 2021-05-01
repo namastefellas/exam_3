@@ -1,7 +1,17 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.urls import reverse_lazy, reverse
 from webapp.models import Product
-from django.views.generic import View, TemplateView, RedirectView, FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    View, 
+    TemplateView, 
+    RedirectView,
+    FormView,
+    ListView,
+    DetailView, 
+    CreateView, 
+    UpdateView, 
+    DeleteView
+)
 from django.db.models import Q
 from django.utils.http import urlencode
 

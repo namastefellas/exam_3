@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<h3>Вы уверены, что хотите удалить отзыв?</h3>
+<form method="POST" action="{% url 'webapp:review_delete' review.pk %}">
+    {% csrf_token %}
+        <p><input type="submit" value="Подтвердить"></p>
+        <p><a href="{% url 'webapp:product_list' %}" type="button">Отменить</a></p>
+</form>
+{% endblock %}

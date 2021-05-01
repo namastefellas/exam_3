@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 category_choice = category_choice = [('laptops', 'Компьютеры'), ('keyboards', 'Клавиатура'), ('others', 'Другое'), ('mouses', 'Мышки'), ('headphones', 'Наушники')]
@@ -40,7 +41,7 @@ class Review(models.Model):
         on_delete=models.CASCADE,
         null=True,
     )
-    score = models.IntegerField(null=False, blank=False, verbose_name='Оценка')
+    score = models.IntegerField(null=False, blank=False, validators=[MaxValueValidator(5), MinValueValidator(1)], verbose_name='Оценка')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создано')
     description = models.TextField(max_length=2000, null=False, blank=False, verbose_name='Текст отзыва')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
