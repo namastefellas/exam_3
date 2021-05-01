@@ -1,0 +1,104 @@
+[
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Модераторы",
+    "permissions": [
+      [
+        "add_product",
+        "webapp",
+        "product"
+      ],
+      [
+        "change_product",
+        "webapp",
+        "product"
+      ],
+      [
+        "delete_product",
+        "webapp",
+        "product"
+      ],
+      [
+        "view_product",
+        "webapp",
+        "product"
+      ],
+      [
+        "change_review",
+        "webapp",
+        "review"
+      ],
+      [
+        "delete_review",
+        "webapp",
+        "review"
+      ],
+      [
+        "view_review",
+        "webapp",
+        "review"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$qJRnRTcPp90XnRWzl0Pydo$LyF/LTNaw+SEEhedMhkICEpFcbDvjMw06GN+uaS3f3M=",
+    "last_login": "2021-05-01T12:39:15.696Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-05-01T06:35:56.094Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$eG9rg5a8iPfab7kmXcVZdQ$kwINGK6P2YY5HYqtFLBKDbTChjiKaswSG7okAHFUbx0=",
+    "last_login": "2021-05-01T12:34:47.986Z",
+    "is_superuser": false,
+    "username": "yolo",
+    "first_name": "Yolo",
+    "last_name": "",
+    "email": "yolo@yolo.yolo",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-01T11:30:03.495Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$IW625AlFy5djAiy3IyIhQ0$1rGR1p/Ev26r8GSa/OIam80PmgvSAls8ArVVoau+Xvo=",
+    "last_login": "2021-05-01T12:35:07.646Z",
+    "is_superuser": false,
+    "username": "moder",
+    "first_name": "Moder",
+    "last_name": "",
+    "email": "moder@moder.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-01T12:10:30Z",
+    "groups": [
+      [
+        "Модераторы"
+      ]
+    ],
+    "user_permissions": []
+  }
+}
+]
